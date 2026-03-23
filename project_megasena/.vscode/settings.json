@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    "windows/": true,
+    "linux/": true,
+    "macos/": true,
+    "web/": true,
+    ".dart_tool/": true,
+    ".idea/": true
+  }
+}

@@ -32,14 +32,14 @@ Este projeto tem dois grandes objetivos:
 - [ ] **Armazenamento Local:** Salvar os bilhetes escaneados na memória do celular.
 - [ ] **Conferência Automática:** Comparar os jogos salvos com os resultados oficiais e notificar acertos (Quadra, Quina ou Sena).
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **[Flutter](https://flutter.dev/):** Framework principal para construção da interface de usuário nativa (Android/iOS).
 * **[Dart](https://dart.dev/):** Linguagem de programação base.
 * **[Google Generative AI](https://pub.dev/packages/google_generative_ai):** Pacote oficial para comunicação com a API do Gemini.
 * **[Image Picker](https://pub.dev/packages/image_picker):** (Em breve) Para captura de fotos pela câmera.
 
-## ⚙️ Como executar o projeto
+## Como executar o projeto
 
 Se você deseja clonar e rodar este projeto na sua máquina, siga os passos abaixo:
 
