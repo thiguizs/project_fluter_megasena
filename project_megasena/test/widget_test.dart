@@ -1,30 +1,20 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+// Teste básico de widget do Flutter atualizado para o nosso app.
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:project_megasena/main.dart';
+import 'package:project_megasena/main.dart'; // Importa o arquivo principal do seu app
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Teste de carregamento da Tela Inicial', (WidgetTester tester) async {
+    // Constrói o nosso aplicativo usando a classe correta que criamos.
+    await tester.pumpWidget(const MeuAppLoteria());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
+    // Como removemos o contador antigo, vamos testar se a nossa nova
+    // tela carregou corretamente procurando pelo título da AppBar.
+    expect(find.text('Meus Bilhetes'), findsOneWidget);
+    
+    // Verifica que o texto antigo do contador não existe mais.
     expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
   });
 }
