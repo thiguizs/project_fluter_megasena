@@ -1,11 +1,12 @@
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart'; // Cofre de segurança importado!
 import 'package:project_megasena/models/bilhetes.dart';
 
 class GeminiService {
-
-  static const _apiKey = 'AIzaSyAI92Ihfu-YGoQu9I48BuCuCvUyt2LnudE'; 
+  
+  final String _apiKey = dotenv.env['GEMINI_API_KEY'] ?? ''; //chave puxada da .env
   late final GenerativeModel _model;
 
   GeminiService() {
@@ -14,7 +15,7 @@ class GeminiService {
       apiKey: _apiKey,
     );
   }
-
+//função para ler o bilhete 
   Future<bilhete?> lerBilheteDaImagem(Uint8List bytesDaImagem) async {
     final prompt = TextPart(
         'Analise esta foto de um bilhete da Mega-Sena. '
@@ -37,6 +38,7 @@ class GeminiService {
         final jsonLimpo = textoResposta.replaceAll('```json', '').replaceAll('```', '').trim();
         final Map<String, dynamic> jsonDecodificado = jsonDecode(jsonLimpo);
         
+        // Chamando fromJson com B maiúsculo
         return bilhete.fromJson(jsonDecodificado);
       }
       return null;
