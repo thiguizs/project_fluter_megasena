@@ -18,13 +18,13 @@ class MeuAppLoteria extends StatelessWidget {
     return MaterialApp(
       title: 'Mega-Sena IA',
       theme: ThemeData(
-        // Mudamos a cor base para verde, que combina mais com loteria!
+        // Mudar a cor base para azul
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
         useMaterial3: true,
       ),
-      // Aqui dizemos qual é a primeira tela do app
+      // chamar tela
       home: const TelaInicial(),
-      // Remove aquela faixa vermelha de "DEBUG" no canto da tela
+      // Remover a faixa do debug
       debugShowCheckedModeBanner: false, 
     );
   }
