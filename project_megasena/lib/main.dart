@@ -16,7 +16,7 @@ class MeuAppLoteria extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mega-Sena IA',
+      title: 'Mega-Sena',
       theme: ThemeData(
         // Mudar a cor base para azul
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
