@@ -76,10 +76,23 @@ class _TelaInicialState extends State<TelaInicial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Meus Bilhetes'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        centerTitle: true,
+      appBar: AppBar( title: const Text('MegaSena IA') ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            const DrawerHeader(child: Text('Menu Principal')),
+            ListTile(
+              leading: const Icon(Icons.history),
+              title: const Text('Resultados Passados'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.map),
+              title: const Text('Lotéricas Próximas'),
+              onTap: () { },
+            ),
+          ],
+        ),
       ),
       body: _isCarregando 
           ? const Center(
